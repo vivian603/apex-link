@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Apex Link Strategy 亞柏匯策略｜Global C-Suite Advisory Portal</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Noto+Serif+TC:wght@400;600;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            black: '#070A09',
+                            dark: '#0D1411',
+                            card: '#111A16',
+                            border: '#1A2E26',
+                            green: '#123326',
+                            gold: '#D4AF37',
+                            goldLight: '#F3E5AB',
+                            goldDark: '#997A15'
+                        }
+                    },
+                    fontFamily: {
+                        cinzel: ['Cinzel', 'serif'],
+                        serif: ['Noto Serif TC', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #070A09; color: #F3F4F6; font-family: 'Plus Jakarta Sans', sans-serif; overflow-x: hidden; }
+        .gold-gradient-text { background: linear-gradient(135deg, #FFF5C0 0%, #D4AF37 50%, #997A15 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .gold-border-glow { border: 1px solid rgba(212, 175, 55, 0.3); box-shadow: 0 10px 30px -10px rgba(0,0,0,0.8); }
+        .gold-border-glow:hover { border: 1px solid rgba(212, 175, 55, 0.6); }
+        .page-view { min-height: calc(100vh - 160px); }
+        .qr-crisp { image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges; }
+        .hang-indent { padding-left: 1rem; text-indent: -1rem; }
+        * { hyphens: none !important; -webkit-hyphens: none !important; }
+    </style>
+</head>
+<body class="bg-brand-black text-gray-100 antialiased selection:bg-brand-gold selection:text-black">
+
+    <!-- 全頁頂部 3 條合規警語 Banner -->
+    <div class="bg-black border-b border-brand-border py-2 px-3 text-[11px] sm:text-xs font-mono text-gray-300 text-center flex flex-col sm:flex-row justify-center items-center gap-1 sm:gap-2 z-10 relative">
+        <span data-zh="[資格有效期間，請依發證機構現行查驗結果為準]" data-en="[Validity subject to issuing authority verification]">[資格有效期間，請依發證機構現行查驗結果為準]</span>
+        <span class="hidden sm:inline text-gray-600">|</span>
+        <span data-zh="[假設性風險預估，須依貴司歷史數據核算]" data-en="[Hypothetical risk estimates based on historical data]">[假設性風險預估，須依貴司歷史數據核算]</span>
+        <span class="hidden sm:inline text-gray-600">|</span>
+        <span data-zh="[本頁不提供成效數據、課程價格與活動日期]" data-en="[Performance metrics, pricing, and dates excluded]">[本頁不提供成效數據、課程價格與活動日期]</span>
+    </div>
+
+    <!-- 抬頭 Header -->
+    <header class="sticky top-0 z-50 bg-brand-black/95 backdrop-blur-md border-b border-brand-border shadow-2xl">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-2">
+            
+            <div class="flex items-center space-x-2.5 cursor-pointer shrink-0" onclick="navigateToPage('page-1')">
+                <div class="w-10 h-10 rounded-full border border-brand-gold/40 bg-brand-dark p-0.5 flex items-center justify-center overflow-hidden shadow-lg shrink-0">
+                    <img src="555.jpg" alt="Logo" class="w-full h-full object-cover rounded-full" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="w-full h-full bg-brand-green hidden items-center justify-center text-brand-gold font-bold font-cinzel text-xs">AL</div>
+                </div>
+                <div>
+                    <div class="flex items-center space-x-1.5">
+                        <span class="font-serif font-bold text-base sm:text-lg text-white tracking-wide whitespace-nowrap">Apex Link Strategy</span>
+                        <span class="text-[10px] px-1.5 py-0.5 rounded bg-brand-green/80 text-brand-gold border border-brand-gold/30 font-mono whitespace-nowrap">亞柏匯策略</span>
+                    </div>
+                    <p class="text-[10px] sm:text-[11px] text-gray-300 font-mono whitespace-nowrap" data-zh="全球 C-Suite 防禦型綠色治理智庫" data-en="Global C-Suite Defensive Climate Governance Advisory">全球 C-Suite 防禦型綠色治理智庫</p>
+                </div>
+            </div>
+            
+            <!-- 導覽選單 -->
+            <nav class="hidden xl:flex items-center space-x-1 font-mono text-xs">
+                <button onclick="navigateToPage('page-1')" id="nav-btn-page-1" class="page-nav-btn px-2.5 py-1.5 rounded-lg text-brand-gold bg-brand-green/50 border border-brand-gold/40 font-semibold transition whitespace-nowrap" data-zh="01. 企業宣言" data-en="01. Manifesto">01. 企業宣言</button>
+                <button onclick="navigateToPage('page-2')" id="nav-btn-page-2" class="page-nav-btn px-2.5 py-1.5 rounded-lg text-gray-300 hover:text-white hover:bg-brand-card transition whitespace-nowrap" data-zh="02. 創辦人與證照" data-en="02. Credentials">02. 創辦人與證照</button>
+                <button onclick="navigateToPage('page-3')" id="nav-btn-page-3" class="page-nav-btn px-2.5 py-1.5 rounded-lg text-gray-300 hover:text-white hover:bg-brand-card transition whitespace-nowrap" data-zh="03. 四大綠色主軸" data-en="03. Core Pillars">03. 四大綠色主軸</button>
+                <button onclick="navigateToPage('page-4')" id="nav-btn-page-4" class="page-nav-btn px-2.5 py-1.5 rounded-lg text-gray-300 hover:text-white hover:bg-brand-card transition whitespace-nowrap" data-zh="04. C-Suite 試算器" data-en="04. ROI Calculator">04. C-Suite 試算器</button>
+                <button onclick="navigateToPage('page-5')" id="nav-btn-page-5" class="page-nav-btn px-2.5 py-1.5 rounded-lg text-gray-300 hover:text-white hover:bg-brand-card transition whitespace-nowrap" data-zh="05. 自動對接鏈" data-en="05. Automated Intake">05. Automated Intake</button>
+            </nav>
+
+            <div class="flex items-center space-x-2 shrink-0">
+                <div class="flex items-center bg-black p-0.5 rounded-lg border border-brand-border text-[11px] font-mono">
+                    <button onclick="setLanguage('zh')" id="lang-btn-zh" class="px-2 py-0.5 rounded bg-brand-gold text-black font-bold transition">ZH</button>
+                    <button onclick="setLanguage('en')" id="lang-btn-en" class="px-2 py-0.5 rounded text-gray-400 hover:text-white transition">EN</button>
+                </div>
+
+                <button onclick="openModal('modal-qr')" class="hidden sm:flex px-2.5 py-1.5 rounded-lg bg-brand-gold text-black font-semibold text-xs hover:brightness-110 items-center space-x-1 shadow-lg whitespace-nowrap">
+                    <i class="fa-brands fa-whatsapp text-sm"></i>
+                    <span data-zh="WhatsApp 對接" data-en="WhatsApp Portal">WhatsApp 對接</span>
+                </button>
+
+                <button onclick="toggleMobileMenu()" class="xl:hidden p-2.5 text-brand-gold hover:text-white">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- 行動裝置選單 -->
+        <div id="mobile-menu" class="hidden xl:hidden bg-brand-card border-b border-brand-border px-4 py-3 space-y-2 font-mono text-xs shadow-2xl">
+            <button onclick="navigateToPage('page-1'); toggleMobileMenu();" class="block w-full text-left py-2.5 px-3 rounded bg-black/40 text-brand-gold font-bold" data-zh="01. 企業宣言" data-en="01. Manifesto">01. 企業宣言</button>
+            <button onclick="navigateToPage('page-2'); toggleMobileMenu();" class="block w-full text-left py-2.5 px-3 rounded hover:bg-black/40 text-gray-200" data-zh="02. 創辦人與證照" data-en="02. Credentials">02. Credentials</button>
+            <button onclick="navigateToPage('page-3'); toggleMobileMenu();" class="block w-full text-left py-2.5 px-3 rounded hover:bg-black/40 text-gray-200" data-zh="03. 四大綠色主軸" data-en="03. Core Pillars">03. 四大綠色主軸</button>
+            <button onclick="navigateToPage('page-4'); toggleMobileMenu();" class="block w-full text-left py-2.5 px-3 rounded hover:bg-black/40 text-gray-200" data-zh="04. C-Suite 試算器" data-en="04. ROI Calculator">04. C-Suite 試算器</button>
+            <button onclick="navigateToPage('page-5'); toggleMobileMenu();" class="block w-full text-left py-2.5 px-3 rounded hover:bg-black/40 text-gray-200" data-zh="05. 自動對接鏈" data-en="05. Automated Intake">05. Automated Intake</button>
+            <button onclick="openModal('modal-qr'); toggleMobileMenu();" class="w-full py-2.5 rounded bg-brand-gold text-black font-bold text-center block mt-2">WhatsApp 對接</button>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
+
+        <!-- PAGE 1: 企業宣言 -->
+        <section id="page-1" class="page-view space-y-8 sm:space-y-10">
+            <div class="text-center space-y-4 sm:space-y-5 max-w-5xl mx-auto pt-2 sm:pt-4">
+                <div class="inline-flex items-center space-x-2 px-3.5 py-1 rounded-full bg-brand-green/60 border border-brand-gold/30 text-brand-gold text-xs">
+                    <i class="fa-solid fa-earth-americas"></i>
+                    <span data-zh="極限氣候風控 ‧ 國際合規防線" data-en="Climate Resilience & Executive Governance">極限氣候風控 ‧ 國際合規防線</span>
+                </div>
+                
+                <h1 class="text-2xl sm:text-4xl md:text-5xl font-serif font-bold tracking-tight leading-snug sm:leading-tight gold-gradient-text px-2">
+                    <span data-zh="極限氣候風控 ‧ 國際合規防線" data-en="Architecting Climate Resilience & <span class='inline-block whitespace-nowrap'>Audit-Proof</span> ESG Governance">極限氣候風控 ‧ 國際合規防線</span>
+                </h1>
+                
+                <p class="text-sm sm:text-lg text-white font-medium max-w-4xl mx-auto leading-relaxed border-y border-brand-gold/20 py-4 px-4 bg-black/30 rounded-xl" 
+                   data-zh="「無論是萬人規模的『零廢棄賽事』與『永續展演落地』，還是跨國企業的 <span class='inline-block'>ESG 氣候合規風控</span>——<span class='gold-gradient-text font-extrabold text-base sm:text-xl px-1 whitespace-nowrap'>Apex Link 亞柏匯</span>，絕對是貴公司打造『經得起審計、守得住商譽』的最佳戰略夥伴。」" 
+                   data-en="“Whether deploying mega-scale zero-waste events, sustainable exhibitions, or MNC ESG climate compliance—<span class='gold-gradient-text font-extrabold text-base sm:text-xl px-1 whitespace-nowrap'>Apex Link Strategy</span> is your premier strategic partner for <span class='inline-block'>audit-proof and brand-secure governance.</span>”">
+                    「無論是萬人規模的『零廢棄賽事』與『永續展演落地』，還是跨國企業的 <span class="inline-block">ESG 氣候合規風控</span>——<span class="gold-gradient-text font-extrabold text-base sm:text-xl px-1 whitespace-nowrap">Apex Link 亞柏匯</span>，絕對是貴公司打造『經得起審計、守得住商譽』的最佳戰略夥伴。」
+                </p>
+                
+                <div class="pt-2">
+                    <button onclick="navigateToPage('page-5')" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-gradient-to-r from-brand-goldDark via-brand-gold to-brand-goldLight text-black font-bold text-sm uppercase tracking-wider hover:brightness-110 transition shadow-xl">
+                        <span data-zh="啟動國際戰略對接" data-en="Initiate Advisory Intake">啟動國際戰略對接</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- 具體服務交付卡片 -->
+            <div class="p-6 bg-brand-card/80 rounded-3xl border border-brand-gold/30 gold-border-glow space-y-4">
+                <div class="text-center space-y-1">
+                    <p class="text-xs font-mono text-brand-gold tracking-widest uppercase" data-zh="WHAT WE DELIVER ‧ 具體服務交付" data-en="WHAT WE DELIVER ‧ Core Deliverables">WHAT WE DELIVER ‧ 具體服務交付</p>
+                    <h3 class="text-base sm:text-xl font-serif font-bold text-white" data-zh="Apex Link 能為您的企業具體執行什麼？" data-en="What Specific Services Does Apex Link Deliver?">Apex Link 能為您的企業具體執行什麼？</h3>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
+                    <div class="p-4 bg-black/60 rounded-2xl border border-brand-border space-y-2">
+                        <div class="flex items-center space-x-2 text-brand-gold font-bold text-sm">
+                            <i class="fa-solid fa-trophy"></i>
+                            <span data-zh="大型賽事全範疇永續治理" data-en="Mega-Event Sustainability & GHG Accounting">大型賽事全範疇永續治理</span>
+                        </div>
+                        <p class="text-xs text-gray-300 leading-relaxed font-normal" data-zh="依據 <span class='text-brand-goldLight font-mono'>ISO 20121</span> 與 <span class='text-brand-goldLight font-mono'>ISO 14067</span> 導引賽事範疇一至三（Scope 1-3）碳盤查，並部署 WBGT 極端微氣候緊急醫療防線與閉環資源管理。" data-en="Executing ISO 20121 event sustainability, ISO 14067 Scope 1-3 carbon footprinting, and WBGT extreme heat protocols for mega sports.">
+                            依據 <span class="text-brand-goldLight font-mono">ISO 20121</span> 與 <span class="text-brand-goldLight font-mono">ISO 14067</span> 導引賽事範疇一至三（Scope 1-3）碳盤查，並部署 WBGT 極端微氣候緊急醫療防線與閉環資源管理。
+                        </p>
+                    </div>
+
+                    <div class="p-4 bg-black/60 rounded-2xl border border-brand-border space-y-2">
+                        <div class="flex items-center space-x-2 text-brand-gold font-bold text-sm">
+                            <i class="fa-solid fa-building-columns"></i>
+                            <span data-zh="展演循環經濟與審計落地" data-en="Zero-Waste & Circular Exhibitions">展演循環經濟與審計落地</span>
+                        </div>
+                        <p class="text-xs text-gray-300 leading-relaxed font-normal" data-zh="導入 MFA 物質流數據分析與模組化拆解展場工程，為大型國際展演建立經得起第三方審計的 <span class='text-brand-goldLight font-mono'>TRUE Zero Waste</span> 零廢棄認證。" data-en="Deploying MFA material flow data analysis & demountable booth systems to achieve audit-proof TRUE Zero Waste certification for exhibitions.">
+                            導入 MFA 物質流數據分析與模組化拆解展場工程，為大型國際展演建立經得起第三方審計的 <span class="text-brand-goldLight font-mono">TRUE Zero Waste</span> 零廢棄認證。
+                        </p>
+                    </div>
+
+                    <div class="p-4 bg-black/60 rounded-2xl border border-brand-border space-y-2">
+                        <div class="flex items-center space-x-2 text-brand-gold font-bold text-sm">
+                            <i class="fa-solid fa-file-contract"></i>
+                            <span data-zh="ESG 贊助合約重構與防漂綠" data-en="ESG Anti-Greenwashing Advisory">ESG 贊助合約重構與防漂綠</span>
+                        </div>
+                        <p class="text-xs text-gray-300 leading-relaxed font-normal" data-zh="對標歐盟 <span class='text-brand-goldLight font-mono'>CSRD</span> 與 <span class='text-brand-goldLight font-mono'>GIZ</span> 可持續金融分類法，重構企業賽事贊助合約，量化 SROI 社會投資回報並屏障法律與公關風暴。" data-en="Aligning corporate sponsorship contracts with EU CSRD & GIZ taxonomies to quantify SROI metrics and mitigate greenwashing liability.">
+                            對標歐盟 <span class="text-brand-goldLight font-mono">CSRD</span> 與 <span class="text-brand-goldLight font-mono">GIZ</span> 可持續金融分類法，重構企業賽事贊助合約，量化 SROI 社會投資回報並屏障法律與公關風暴。
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 官方公司宣言 -->
+            <div class="p-6 sm:p-10 bg-brand-card rounded-3xl border border-brand-gold/30 gold-border-glow text-center space-y-4 relative">
+                <p class="text-xs font-mono text-brand-gold tracking-widest uppercase" data-zh="Apex Link 官方公司宣言" data-en="Apex Link Official Corporate Manifesto">Apex Link 官方公司宣言</p>
+                <blockquote class="text-lg sm:text-xl md:text-2xl font-serif font-bold text-white leading-snug sm:leading-relaxed max-w-4xl mx-auto">
+                    “We Do Not Sell Carbon Offsets;<br class="hidden sm:inline">
+                    We Architect Defensive Climate Governance for Global <span class="whitespace-nowrap">C-Suite.</span>”
+                </blockquote>
+                <p class="text-xs sm:text-sm text-gray-200 font-normal leading-relaxed" data-zh="「我們不販售公關型碳抵換；我們為全球 C-Suite 擘劃經得起第三方審計的防禦型綠色治理體系。」" data-en="“We do not offer marketing carbon offsets; we build audit-proof defensive climate governance architectures.”">
+                    「我們不販售公關型碳抵換；我們為全球 C-Suite 擘劃經得起第三方審計的防禦型綠色治理體系。」
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="p-5 sm:p-6 bg-brand-card rounded-2xl border border-brand-border space-y-2 gold-border-glow">
+                    <h4 class="text-sm font-serif font-bold text-brand-gold" data-zh="一、當責相承" data-en="I. Executive Accountability">一、當責相承</h4>
+                    <p class="text-xs text-gray-300 font-normal leading-relaxed" data-zh="專案結果由創辦人徐鳴親自承擔與督導，絕不層層轉包外判。" data-en="Directly overseen by Founder Vivian Hsu, guaranteeing zero sub-contracting.">專案結果由創辦人徐鳴親自承擔與督導，絕不層層轉包外判。</p>
+                </div>
+                <div class="p-5 sm:p-6 bg-brand-card rounded-2xl border border-brand-border space-y-2 gold-border-glow">
+                    <h4 class="text-sm font-serif font-bold text-brand-gold" data-zh="二、受託善治" data-en="II. Fiduciary Stewardship">二、受託善治</h4>
+                    <p class="text-xs text-gray-300 font-normal leading-relaxed" data-zh="以受託人委託心態嚴格控管每一分綠色預算與商業隱私。" data-en="Strict control of capital allocation and data privacy with fiduciary integrity.">以受託人委託心態嚴格控管每一分綠色預算與商業隱私。</p>
+                </div>
+                <div class="p-5 sm:p-6 bg-brand-card rounded-2xl border border-brand-border space-y-2 gold-border-glow">
+                    <h4 class="text-sm font-serif font-bold text-brand-gold" data-zh="三、極限防禦" data-en="III. Defensive Integrity">三、極限防禦</h4>
+                    <p class="text-xs text-gray-300 font-normal leading-relaxed" data-zh="以極端微氣候衝擊與歐盟 CSRD / GIZ 金融分類法審計為設計前提。" data-en="Designed to withstand extreme climate impacts and EU CSRD financial audits.">以極端微氣候衝擊與歐盟 CSRD / GIZ 金融分類法審計為設計前提。</p>
+                </div>
+                <div class="p-5 sm:p-6 bg-brand-card rounded-2xl border border-brand-border space-y-2 gold-border-glow">
+                    <h4 class="text-sm font-serif font-bold text-brand-gold" data-zh="四、資產傳承" data-en="IV. Asset Legacy">四、資產傳承</h4>
+                    <p class="text-xs text-gray-300 font-normal leading-relaxed" data-zh="把永續標準、MFA 物質流數據與資產留在貴司，非一次性公關活動。" data-en="Anchoring sustainable metrics and MFA data assets within your organization.">把永續標準、MFA 物質流數據與資產留在貴司，非一次性公關活動。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PAGE 2: 創辦人與證照 -->
+        <section id="page-2" class="page-view space-y-8 hidden">
+            <div class="p-6 sm:p-8 bg-brand-card rounded-3xl border border-brand-border gold-border-glow">
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-6 sm:gap-8 items-center">
+                    <div class="md:col-span-4 flex flex-col items-center text-center space-y-2">
+                        
+                        <div class="w-52 sm:w-60 rounded-3xl border-2 border-brand-gold/80 p-1.5 bg-black shadow-2xl overflow-hidden relative flex items-center justify-center gold-border-glow">
+                            <img src="linked專用照.jpg" alt="Vivian Hsu" class="w-full h-auto rounded-2xl object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="w-full h-52 bg-gradient-to-b from-brand-dark via-black to-brand-green/30 hidden flex-col items-center justify-center text-brand-gold p-3 rounded-xl border border-brand-gold/30">
+                                <div class="w-16 h-16 rounded-full border border-brand-gold/60 flex items-center justify-center bg-black/60 mb-2 shadow-inner">
+                                    <i class="fa-solid fa-user-shield text-3xl text-brand-gold"></i>
+                                </div>
+                                <span class="font-serif font-bold text-sm text-white">徐鳴 Vivian Hsu</span>
+                                <span class="text-[10px] text-brand-gold font-mono mt-0.5">15 UN Credentials</span>
+                            </div>
+                        </div>
+
+                        <div class="pt-2 space-y-1">
+                            <h4 class="text-xl sm:text-2xl font-serif font-bold text-white tracking-wide">徐鳴 (Vivian Hsu)</h4>
+                            <p class="text-sm sm:text-base font-bold gold-gradient-text tracking-wide" data-zh="創辦人兼首席戰略顧問" data-en="Founder & Chief Strategy Advisor">創辦人兼首席戰略顧問</p>
+                            <p class="text-xs text-brand-goldLight font-mono tracking-wider bg-black/60 px-3 py-1 rounded-full border border-brand-border inline-block">Official Verification: HSU Fu-Ming</p>
+                        </div>
+
+                    </div>
+
+                    <div class="md:col-span-8 space-y-4">
+                        <h3 class="text-xl sm:text-2xl font-serif font-bold text-white">徐鳴 (Vivian Hsu)｜C-Suite Advisory Founder</h3>
+                        
+                        <p class="text-xs sm:text-sm text-gray-200 leading-relaxed font-normal" data-zh="具備 20 多年亞洲與跨國大型賽事統籌經驗，媒體公關行銷造勢與危機防衛底蘊。親自持有 15 項聯合國 (UNFCCC/UNITAR/UNU-IAS) 及德國 GIZ 頒發之《運動促進氣候行動》、《可持續金融分類法》等專門研修結業證書（其中 UNITAR 體育模組經 70% 標準評測合格）。" data-en="20+ years of global mega-event management, public relations marketing, and crisis defense. Holds 15 UN and GIZ official certificates in Sports for Climate Action and Sustainable Finance Taxonomies.">
+                            具備 20 多年亞洲與跨國大型賽事統籌經驗，媒體公關行銷造勢與危機防衛底蘊。親自持有 15 項聯合國 (UNFCCC/UNITAR/UNU-IAS) 及德國 GIZ 頒發之《運動促進氣候行動》、《可持續金融分類法》等專門研修結業證書（其中 UNITAR 體育模組經 70% 標準評測合格）。
+                        </p>
+
+                        <div class="p-4 bg-black rounded-xl border border-brand-border space-y-2 text-xs">
+                            <span class="text-brand-gold font-serif font-bold block text-sm" data-zh="實績資歷與賽事規格考察對接矩陣：" data-en="Global Event Footprint & World Athletics Spec Observation Portfolio:">實績資歷與賽事規格考察對接矩陣：</span>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2 text-gray-200 text-xs font-normal leading-relaxed">
+                                <div class="hang-indent" data-zh="• 極限耐力實戰：跨國指標性鐵人三項與 400km 戈壁沙漠挑戰" data-en="• Global Endurance: International Ironman 70.3, Gobi Desert 400km">• Global Endurance: International Ironman 70.3, Gobi Desert 400km</div>
+                                <div class="hang-indent" data-zh="• 賽事規格考察：參照世界田聯 (World Athletics) 規格考察東京/大阪/廣州馬拉松" data-en="• World Athletics Specs Observation: Tokyo, Osaka, Guangzhou Marathons">• World Athletics Specs Observation: Tokyo, Osaka, Guangzhou Marathons</div>
+                                <div class="hang-indent" data-zh="• 職業聯賽營運：國家級職業籃球聯賽與職棒團體賽事統籌" data-en="• Professional Leagues: National Pro Basketball & Pro Baseball Events">• Professional Leagues: National Pro Basketball & Pro Baseball Events</div>
+                                <div class="hang-indent" data-zh="• 企業 CSRD 治理：跨國財富管理銀行與標竿航空海洋永續專案" data-en="• Corporate ESG: Private Banking & Major Airlines Coastal Cleanups">• Corporate ESG: Private Banking & Major Airlines Coastal Cleanups</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="p-6 sm:p-8 bg-brand-card rounded-3xl border border-brand-border space-y-6">
+                <div class="sm:flex sm:items-center sm:justify-between border-b border-brand-border pb-4">
+                    <div>
+                        <h4 class="text-base sm:text-lg font-serif font-bold text-white flex items-center space-x-2">
+                            <i class="fa-solid fa-award text-brand-gold"></i>
+                            <span data-zh="15 項聯合國與國際官方研習認證矩陣" data-en="15 UN & International Credentials Matrix">15 項聯合國與國際官方研習認證矩陣</span>
+                        </h4>
+                        <p class="text-xs text-gray-400 mt-1" data-zh="點擊卡片檢視國際官方條款、高清證書圖檔與對接優勢" data-en="Click cards to inspect official credentials and compliance frameworks">點擊卡片檢視國際官方條款、高清證書圖檔與對接優勢</p>
+                    </div>
+
+                    <div class="mt-3 sm:mt-0 flex items-center space-x-1 bg-black p-1 rounded-lg border border-brand-border text-xs font-mono overflow-x-auto">
+                        <button onclick="filterCert('all')" class="cert-filter-btn px-2.5 py-1 rounded text-black bg-brand-gold font-bold whitespace-nowrap" id="cert-btn-all" data-zh="全部 (15)" data-en="All (15)">全部 (15)</button>
+                        <button onclick="filterCert('sports')" class="cert-filter-btn px-2.5 py-1 rounded text-gray-300 hover:text-white whitespace-nowrap" id="cert-btn-sports" data-zh="氣候賽事" data-en="Climate Sports">氣候賽事</button>
+                        <button onclick="filterCert('finance')" class="cert-filter-btn px-2.5 py-1 rounded text-gray-300 hover:text-white whitespace-nowrap" id="cert-btn-finance" data-zh="金融分類" data-en="Taxonomies">金融分類</button>
+                        <button onclick="filterCert('circular')" class="cert-filter-btn px-2.5 py-1 rounded text-gray-300 hover:text-white whitespace-nowrap" id="cert-btn-circular" data-zh="閉環循環" data-en="Circularity">閉環循環</button>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4" id="cert-grid">
+                </div>
+            </div>
+        </section>
+
+        <!-- PAGE 3: 四大綠色主軸 -->
+        <section id="page-3" class="page-view space-y-6 sm:space-y-8 hidden">
+            <div class="text-center space-y-2 pt-2">
+                <h3 class="text-xl sm:text-2xl font-serif font-bold text-white" data-zh="四大綠色核心業務與 ISO 20121 國際執行準則" data-en="Four Core Pillars & ISO 20121 International Standards">四大綠色核心業務與 ISO 20121 國際執行準則</h3>
+                <p class="text-xs text-gray-300" data-zh="以國際水準之極限風控與可持續金融分類法，為 C-Suite 構建審計防線" data-en="Constructing audit-proof governance for C-Suite with international standards">以國際水準之極限風控與可持續金融分類法，為 C-Suite 構建審計防線</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+                <!-- 1. 綠色賽事 -->
+                <div class="p-5 sm:p-6 bg-brand-card rounded-2xl border border-brand-gold/30 space-y-3 sm:space-y-4 gold-border-glow">
+                    <div class="border-b border-brand-border pb-3">
+                        <h4 class="text-base sm:text-lg font-serif font-bold gold-gradient-text tracking-wide" data-zh="一、綠色賽事 (Green Mega-Events)" data-en="I. Green Mega-Events">一、綠色賽事 (Green Mega-Events)</h4>
+                    </div>
+                    <p class="text-xs sm:text-sm text-gray-200 leading-relaxed font-normal" data-zh="對標 <span class='text-brand-goldLight font-mono'>World Athletics</span> 與 <span class='text-brand-goldLight font-mono'>IOC</span> 氣候架構。部署 <span class='text-brand-goldLight font-mono'>WBGT Extreme Microclimate Emergency Protocols</span> (極端微氣候緊急醫療後送協定) 與 <span class='text-brand-goldLight font-mono'>Closed-Loop Hydration Infrastructure</span> (零廢棄閉環水資源基礎設施)。" data-en="Aligned with <span class='text-brand-goldLight font-mono'>World Athletics</span> and <span class='text-brand-goldLight font-mono'>IOC</span> climate frameworks. Deploying <span class='text-brand-goldLight font-mono'>WBGT Extreme Microclimate Emergency Protocols</span> and <span class='text-brand-goldLight font-mono'>Closed-Loop Hydration Infrastructure</span>.">
+                        對標 <span class="text-brand-goldLight font-mono">World Athletics</span> 與 <span class="text-brand-goldLight font-mono">IOC</span> 氣候架構。部署 <span class="text-brand-goldLight font-mono">WBGT Extreme Microclimate Emergency Protocols</span> (極端微氣候緊急醫療後送協定) 與 <span class="text-brand-goldLight font-mono">Closed-Loop Hydration Infrastructure</span> (零廢棄閉環水資源基礎設施)。
+                    </p>
+                </div>
+
+                <!-- 2. 綠色展演 -->
+                <div class="p-5 sm:p-6 bg-brand-card rounded-2xl border border-brand-gold/30 space-y-3 sm:space-y-4 gold-border-glow">
+                    <div class="border-b border-brand-border pb-3">
+                        <h4 class="text-base sm:text-lg font-serif font-bold gold-gradient-text tracking-wide" data-zh="二、綠色展演 (Green Exhibitions)" data-en="II. Green Exhibitions">二、綠色展演 (Green Exhibitions)</h4>
+                    </div>
+                    <p class="text-xs sm:text-sm text-gray-200 leading-relaxed font-normal" data-zh="對標 <span class='text-brand-goldLight font-mono'>ISO 14067</span> 與 <span class='text-brand-goldLight font-mono'>TRUE Zero Waste</span> 認證標準。導入 <span class='text-brand-goldLight font-mono'>Modular Demountable Structure</span> (模組化拆解展場硬體) 與 <span class='text-brand-goldLight font-mono'>MFA</span> (Material Flow Analysis, 物質流分析)，實現經得起審計之零廢棄展演。" data-en="Aligned with <span class='text-brand-goldLight font-mono'>ISO 14067</span> and <span class='text-brand-goldLight font-mono'>TRUE Zero Waste</span> standards. Integrating <span class='text-brand-goldLight font-mono'>Modular Demountable Structures</span> and <span class='text-brand-goldLight font-mono'>Material Flow Analysis (MFA)</span> for audit-proof circular exhibitions.">
+                        對標 <span class="text-brand-goldLight font-mono">ISO 14067</span> 與 <span class="text-brand-goldLight font-mono">TRUE Zero Waste</span> 認證標準。導入 <span class="text-brand-goldLight font-mono">Modular Demountable Structure</span> (模組化拆解展場硬體) 與 <span class="text-brand-goldLight font-mono">MFA</span> (Material Flow Analysis, 物質流分析)，實現經得起審計之零廢棄展演。
+                    </p>
+                </div>
+
+                <!-- 3. 企業綠色 CSRD -->
+                <div class="p-5 sm:p-6 bg-brand-card rounded-2xl border border-brand-gold/30 space-y-3 sm:space-y-4 gold-border-glow">
+                    <div class="border-b border-brand-border pb-3">
+                        <h4 class="text-base sm:text-lg font-serif font-bold gold-gradient-text tracking-wide" data-zh="三、企業綠色 CSRD (Corporate ESG)" data-en="III. Corporate Green CSRD">三、企業綠色 CSRD (Corporate ESG)</h4>
+                    </div>
+                    <p class="text-xs sm:text-sm text-gray-200 leading-relaxed font-normal" data-zh="對標 <span class='text-brand-goldLight font-mono'>GIZ / SBFN Sustainable Finance Taxonomies</span> (可持續金融分類法) 與歐盟 <span class='text-brand-goldLight font-mono'>CSRD</span>。重構贊助商合約與 <span class='text-brand-goldLight font-mono'>SROI</span> (Social Return on Investment) 社會價值量化，降低與防範漂綠風險。" data-en="Aligned with <span class='text-brand-goldLight font-mono'>GIZ / SBFN Sustainable Finance Taxonomies</span> and EU <span class='text-brand-goldLight font-mono'>CSRD</span>. Restructuring sponsorship contracts and <span class='text-brand-goldLight font-mono'>SROI</span> metrics to mitigate greenwashing risks.">
+                        對標 <span class="text-brand-goldLight font-mono">GIZ / SBFN Sustainable Finance Taxonomies</span> (可持續金融分類法) 與歐盟 <span class="text-brand-goldLight font-mono">CSRD</span>。重構贊助商合約與 <span class="text-brand-goldLight font-mono">SROI</span> (Social Return on Investment) 社會價值量化，降低與防範漂綠風險。
+                    </p>
+                </div>
+
+                <!-- 4. 綠色團隊顧問 -->
+                <div class="p-5 sm:p-6 bg-brand-card rounded-2xl border border-brand-gold/30 space-y-3 sm:space-y-4 gold-border-glow">
+                    <div class="border-b border-brand-border pb-3">
+                        <h4 class="text-base sm:text-lg font-serif font-bold gold-gradient-text tracking-wide" data-zh="四、綠色團隊顧問 (Plug-and-Play Advisory)" data-en="IV. Plug-and-Play Advisory">四、綠色團隊顧問 (Plug-and-Play Advisory)</h4>
+                    </div>
+                    <p class="text-xs sm:text-sm text-gray-200 leading-relaxed font-normal" data-zh="<span class='text-brand-goldLight font-mono'>Tier 1 Solo-Advisory</span> 隨插即用外包智庫。創辦人徐鳴親自主導，免去企業內部擴編全職永續部門之巨大組織負擔。" data-en="<span class='text-brand-goldLight font-mono'>Tier 1 Solo-Advisory</span> Plug-and-Play consulting framework led by Founder Vivian Hsu, eliminating internal organizational overhead.">
+                        <span class="text-brand-goldLight font-mono">Tier 1 Solo-Advisory</span> 隨插即用外包智庫。創辦人徐鳴親自主導，免去企業內部擴編全職永續部門之巨大組織負擔。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PAGE 4: C-Suite 試算器 -->
+        <section id="page-4" class="page-view space-y-8 hidden">
+            <div class="p-5 sm:p-8 bg-brand-card rounded-3xl border border-brand-border gold-border-glow space-y-6">
+                <div>
+                    <h3 class="text-xl sm:text-2xl font-serif font-bold text-white flex items-center space-x-2 sm:space-x-3">
+                        <i class="fa-solid fa-calculator text-brand-gold"></i>
+                        <span data-zh="C-Suite 氣候風險與 ROI 動態試算模型" data-en="C-Suite Climate Risk & ROI Simulation Model">C-Suite 氣候風險與 ROI 動態試算模型</span>
+                    </h3>
+                    
+                    <div class="mt-3 p-3 bg-black/60 rounded-xl border border-brand-gold/30 text-xs text-gray-200 space-y-1">
+                        <p class="text-brand-gold font-bold" data-zh="💡 演算模型依據與邊界條件說明：" data-en="💡 Model Logic & Boundary Parameters:">💡 演算模型依據與邊界條件說明：</p>
+                        <p data-zh="1. 潛在曝險金額 = 人數 × 基礎合規保障係數 ($45/人) × (WBGT 微氣候風險指數%)。" data-en="1. Exposure = Scale × Base Protection ($45/capita) × WBGT Risk Rate (%).">1. 潛在曝險金額 = 人數 × 基礎合規保障係數 ($45/人) × (WBGT 微氣候風險指數%)。</p>
+                        <p data-zh="2. 避險保護係數依歐盟 CSRD 與 GIZ 可持續金融分類法之標準風險備抵率動態演算。" data-en="2. Protection factors calculated using EU CSRD and GIZ taxonomy protocols.">2. Protection factors calculated using EU CSRD and GIZ taxonomy protocols.</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 bg-black p-4 sm:p-6 rounded-2xl border border-brand-border">
+                    <div class="space-y-3">
+                        <div class="flex justify-between text-xs font-semibold">
+                            <span data-zh="預計賽事/展演規模 (人數)" data-en="Event Scale (Participants)">預計賽事/展演規模 (人數)</span>
+                            <span class="text-brand-gold font-mono text-base" id="val-scale">30,000 人</span>
+                        </div>
+                        <input type="range" min="5000" max="100000" step="5000" value="30000" id="slider-scale" oninput="updateCalculator()" class="w-full accent-brand-gold bg-brand-border h-2 rounded cursor-pointer">
+                    </div>
+
+                    <div class="space-y-3">
+                        <div class="flex justify-between text-xs font-semibold">
+                            <span data-zh="WBGT 微氣候風險指數 (%)" data-en="WBGT Microclimate Risk Index (%)">WBGT 微氣候風險指數 (%)</span>
+                            <span class="text-brand-gold font-mono text-base" id="val-risk">45%</span>
+                        </div>
+                        <input type="range" min="10" max="90" step="5" value="45" id="slider-risk" oninput="updateCalculator()" class="w-full accent-brand-gold bg-brand-border h-2 rounded cursor-pointer">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
+                    <div class="p-5 sm:p-6 rounded-2xl bg-red-950/30 border border-red-800/40 space-y-2">
+                        <span class="text-xs text-red-300 font-medium" data-zh="估計潛在審計與違約風險額" data-en="Est. Audit & Default Exposure">估計潛在審計與違約風險額</span>
+                        <div class="text-2xl sm:text-3xl font-serif font-bold text-red-200 font-mono" id="out-risk-money">$1,350,000</div>
+                    </div>
+
+                    <div class="p-5 sm:p-6 rounded-2xl bg-amber-950/30 border border-amber-800/40 space-y-2 overflow-hidden">
+                        <span class="text-xs text-amber-300 font-medium" data-zh="極端氣候醫療預警等級" data-en="Emergency Protocol Level">極端氣候醫療預警等級</span>
+                        <div class="text-base sm:text-xl md:text-2xl font-serif font-bold text-amber-200 font-mono whitespace-nowrap overflow-hidden text-ellipsis" id="out-medical">Level 3 (中高 - 醫療通道)</div>
+                    </div>
+
+                    <div class="p-5 sm:p-6 rounded-2xl bg-emerald-950/30 border border-emerald-800/40 space-y-2">
+                        <span class="text-xs text-emerald-300 font-medium" data-zh="預估避險保護係數 (假設性)" data-en="Est. Hedging Protection Factor">預估避險保護係數 (假設性)</span>
+                        <div class="text-xl sm:text-3xl font-serif font-bold text-emerald-200 font-mono whitespace-nowrap" id="out-roi">8.5x 避險係數</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PAGE 5: 自動對接鏈與 Alex 頂級特助對話視窗 -->
+        <section id="page-5" class="page-view space-y-8 hidden">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-start">
+                
+                <!-- 🔥 徹底去 AI 化：Alex｜亞柏匯 C-Suite 頂級特助 -->
+                <div class="lg:col-span-5 p-5 sm:p-6 bg-brand-card rounded-3xl border border-brand-border space-y-4">
+                    <div class="flex items-center space-x-3 border-b border-brand-border pb-3">
+                        <div class="w-10 h-10 rounded-full bg-brand-gold/20 border border-brand-gold/40 flex items-center justify-center text-brand-gold shrink-0">
+                            <i class="fa-solid fa-user-tie text-base"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-base font-serif font-bold text-white flex items-center space-x-1.5">
+                                <span>Alex</span>
+                                <span class="text-[10px] font-mono font-normal px-1.5 py-0.5 rounded bg-brand-gold/20 text-brand-gold border border-brand-gold/30">C-Suite 頂級特助</span>
+                            </h4>
+                            <p class="text-xs text-gray-300" data-zh="創辦人徐鳴團隊專屬線上特助" data-en="Executive Assistant for Founder Vivian Hsu">創辦人徐鳴團隊專屬線上特助</p>
+                        </div>
+                    </div>
+
+                    <select id="chatbot-dropdown" onchange="autoAskChatbot()" class="w-full bg-black border border-brand-border rounded-xl px-3 py-2.5 text-xs text-gray-200 focus:outline-none focus:border-brand-gold font-mono">
+                        <option value="" data-zh="-- 請選擇想諮詢的國際範疇 --" data-en="-- Select Advisory Domain --">-- 請選擇想諮詢的國際範疇 --</option>
+                        <option value="1" data-zh="🌱 四大綠色主軸與國際交付" data-en="🌱 Four Core Pillars & Global Deliverables">🌱 四大綠色主軸與國際交付</option>
+                        <option value="2" data-zh="👑 創辦人徐鳴與 15 項 UN 證照" data-en="👑 Founder Vivian Hsu & 15 UN Credentials">👑 創辦人徐鳴與 15 項 UN 證照</option>
+                        <option value="3" data-zh="🛡️ 國家級研發專案與 C-Suite 風控" data-en="🛡️ National R&D & C-Suite Risk Control">🛡️ 國家級研發專案與 C-Suite 風控</option>
+                        <option value="4" data-zh="📋 Tier 1 對接與去敏 SOP" data-en="📋 Tier 1 De-identification SOP">📋 Tier 1 對接與去敏 SOP</option>
+                    </select>
+
+                    <div id="chat-messages" class="h-52 overflow-y-auto space-y-3 p-3 bg-black rounded-xl border border-brand-border text-xs">
+                        <div class="p-2.5 rounded-lg bg-brand-green/30 border border-brand-green/50 text-gray-100" data-zh="您好！我是創辦人團隊的頂級特助 Alex。請選擇上方主題選單或直接留下您的專案需求，我將親自為您詳細紀錄並安排徐鳴創辦人進行直接對接。" data-en="Welcome. I am Alex, Executive Assistant to Founder Vivian Hsu. Please select a domain above or type your inquiry, and I will personally record your requirements for direct executive consultation.">
+                            您好！我是創辦人團隊的頂級特助 Alex。請選擇上方主題選單或直接留下您的專案需求，我將親自為您詳細紀錄並安排徐鳴創辦人進行直接對接。
+                        </div>
+                    </div>
+
+                    <div class="flex items-center space-x-2">
+                        <input type="text" id="chat-input" placeholder="請留下您的諮詢內容..." class="flex-1 bg-black border border-brand-border rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-brand-gold" onkeypress="if(event.key==='Enter') sendChatMessage()">
+                        <button onclick="sendChatMessage()" class="px-4 py-2 rounded-lg bg-brand-gold text-black text-xs font-bold hover:brightness-110">
+                            發送
+                        </button>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7 p-5 sm:p-8 bg-brand-card rounded-3xl border border-brand-border gold-border-glow space-y-6">
+                    <div>
+                        <h4 class="text-lg sm:text-xl font-serif font-bold text-white" data-zh="啟動電腦自動化需求去敏評估鏈" data-en="Automated Client De-identification Evaluation Chain">啟動電腦自動化需求去敏評估鏈</h4>
+                        <p class="text-xs text-gray-300 mt-1" data-zh="填寫下方需求，系統將自動啟動資料去敏並生成排程案號" data-en="Submit requirements below to execute automated de-identification and sequence coding.">填寫下方需求，系統將自動啟動資料去敏並生成排程案號</p>
+                    </div>
+
+                    <form id="auto-form" onsubmit="handleAutoFormSubmit(event)" class="space-y-4 text-xs font-mono">
+                        <div>
+                            <label class="text-gray-200 block mb-1" data-zh="欲對接之國際核心範疇：" data-en="Primary Advisory Domain:">欲對接之國際核心範疇：</label>
+                            <select required class="w-full bg-black border border-brand-border rounded-xl px-3.5 py-2.5 text-gray-100 focus:outline-none focus:border-brand-gold">
+                                <option value="1" data-zh="綠色賽事 (WBGT 微氣候風控 / Emergency Protocols)" data-en="Green Mega-Events (WBGT Emergency Protocols)">綠色賽事 (WBGT 微氣候風控 / Emergency Protocols)</option>
+                                <option value="2" data-zh="綠色展演 (TRUE Zero Waste / ISO 14067 MFA)" data-en="Green Exhibitions (TRUE Zero Waste / ISO 14067 MFA)">綠色展演 (TRUE Zero Waste / ISO 14067 MFA)</option>
+                                <option value="3" data-zh="企業 CSRD (GIZ 可持續金融分類法審計對接)" data-en="Corporate CSRD (GIZ Taxonomies Alignment)">企業 CSRD (GIZ Taxonomies Alignment)</option>
+                                <option value="4" data-zh="Tier 1 Solo-Advisory 隨插即用外包智庫" data-en="Tier 1 Solo-Advisory Plug-and-Play Hub">Tier 1 Solo-Advisory 隨插即用外包智庫</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="text-gray-200 block mb-1" data-zh="貴司官方電子信箱：" data-en="Corporate Email Address:">貴司官方電子信箱：</label>
+                            <input type="email" id="input-email" required placeholder="vivianhsuceo@gmail.com" class="w-full bg-black border border-brand-border rounded-xl px-3.5 py-2.5 text-white focus:outline-none focus:border-brand-gold">
+                            <p id="email-error" class="text-[10px] text-red-400 mt-1 hidden" data-zh="⚠️ 請輸入有效的 Email 格式（例：name@company.com）" data-en="⚠️ Invalid Email format.">⚠️ 請輸入有效的 Email 格式（例：name@company.com）</p>
+                        </div>
+
+                        <button type="submit" class="w-full py-3 rounded-xl bg-gradient-to-r from-brand-goldDark via-brand-gold to-brand-goldLight text-black font-bold text-xs uppercase tracking-wider hover:brightness-110 transition shadow-xl">
+                            <span data-zh="啟動電腦自動化去敏評估鏈" data-en="Execute Automated Intake Chain">啟動電腦自動化去敏評估鏈</span>
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-brand-border bg-black py-8 px-4 text-xs text-gray-400 mt-12 text-center space-y-2 font-mono">
+        <p class="font-serif text-brand-gold font-bold">Apex Link Strategy 亞柏匯策略｜Global C-Suite Advisory</p>
+        <p>Official Email: <a href="mailto:vivianhsuceo@gmail.com" class="text-gray-200 underline">vivianhsuceo@gmail.com</a> | WhatsApp / WeChat Contact Available</p>
+        <p class="text-[10px] text-gray-500 leading-relaxed">[資格有效期間，請依發證機構現行查驗結果為準] | [假設性風險預估，須依貴司歷史數據核算] | [本頁不提供成效數據、課程價格與活動日期]</p>
+    </footer>
+
+    <!-- 證照詳情彈窗 -->
+    <div id="modal-cert" class="fixed inset-0 bg-black/85 backdrop-blur-md z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-brand-card border border-brand-gold/40 rounded-3xl max-w-lg w-full p-6 space-y-4 relative gold-border-glow max-h-[90vh] overflow-y-auto">
+            <button onclick="closeModal('modal-cert')" class="absolute top-4 right-4 text-gray-400 hover:text-white text-lg z-10">✕</button>
+            
+            <div class="w-full rounded-2xl overflow-hidden border border-brand-gold/30 bg-black flex items-center justify-center min-h-[160px] relative">
+                <img id="modal-cert-img" src="" alt="Certificate" class="w-full h-auto max-h-64 object-contain rounded-xl" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="w-full py-8 bg-brand-dark hidden flex-col items-center justify-center text-brand-gold p-3 rounded-xl border border-brand-gold/30">
+                    <i class="fa-solid fa-certificate text-5xl mb-2 text-brand-gold"></i>
+                    <span class="text-xs font-bold text-white">United Nations Official Credential</span>
+                    <span class="text-[10px] text-gray-400">Verification ID: UNFCCC / UNITAR</span>
+                </div>
+            </div>
+
+            <div class="flex items-center space-x-3">
+                <div>
+                    <h4 class="text-base font-serif font-bold text-white" id="modal-cert-title">證照名稱</h4>
+                    <span class="text-xs text-brand-gold font-mono" id="modal-cert-org">發證機構</span>
+                </div>
+            </div>
+            <p class="text-xs text-gray-200 leading-relaxed font-light" id="modal-cert-desc">條款說明...</p>
+            <div class="p-3 bg-black rounded-xl border border-brand-border text-xs text-emerald-400 font-mono" id="modal-cert-value">
+                戰略對接價值...
+            </div>
+        </div>
+    </div>
+
+    <!-- WhatsApp 彈窗 -->
+    <div id="modal-qr" class="fixed inset-0 bg-black/85 backdrop-blur-md z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-brand-card border border-brand-gold/40 rounded-3xl max-w-sm w-full p-6 text-center space-y-4 relative gold-border-glow">
+            <button onclick="closeModal('modal-qr')" class="absolute top-4 right-4 text-gray-400 hover:text-white text-lg">✕</button>
+            <h4 class="text-base font-serif font-bold text-white">Apex Link Business Portal</h4>
+            
+            <div class="w-56 h-56 sm:w-64 sm:h-64 mx-auto bg-white p-2.5 rounded-2xl shadow-2xl overflow-hidden relative flex items-center justify-center border-2 border-brand-gold/40">
+                <img src="ACC9FE7D-5F26-44F2-ABD7-91F41E792A88.jpg" alt="WhatsApp Business QR Code" class="w-full h-full object-contain qr-crisp" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="w-full h-full bg-brand-dark hidden flex-col items-center justify-center text-brand-gold p-3 rounded-xl border border-brand-gold/30">
+                    <i class="fa-brands fa-whatsapp text-6xl mb-2 text-emerald-400"></i>
+                    <span class="text-xs font-bold text-white">Apex Link WhatsApp</span>
+                    <span class="text-[10px] text-gray-400">vivianhsuceo@gmail.com</span>
+                </div>
+            </div>
+            
+            <p class="text-xs text-gray-200 font-light" data-zh="請掃描上方 QR Code，或點擊下方按鈕直接啟動專案對接。" data-en="Scan QR Code or click below to connect directly.">請掃描上方 QR Code，或點擊下方按鈕直接啟動專案對接。</p>
+            
+            <div class="space-y-2">
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=vivianhsuceo@gmail.com" target="_blank" class="inline-flex items-center justify-center space-x-2 w-full py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs transition shadow-lg">
+                    <i class="fa-brands fa-whatsapp text-base"></i>
+                    <span data-zh="啟動官方 WhatsApp / Email 對接" data-en="Launch WhatsApp / Email Portal">啟動官方 WhatsApp / Email 對接</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 自動化評估動畫彈窗 -->
+    <div id="modal-auto-process" class="fixed inset-0 bg-black/85 backdrop-blur-md z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-brand-card border border-brand-gold/40 rounded-3xl max-w-md w-full p-6 space-y-5 text-center relative gold-border-glow">
+            <h4 class="text-base font-serif font-bold text-white" data-zh="電腦自動化去敏評估鏈執行中..." data-en="Automated Intake Chain Executing...">電腦自動化去敏評估鏈執行中...</h4>
+            <div class="w-full bg-black h-2.5 rounded-full overflow-hidden border border-brand-border p-0.5">
+                <div id="proc-bar" class="bg-gradient-to-r from-brand-goldDark via-brand-gold to-brand-goldLight h-full rounded-full transition-all duration-300" style="width: 10%;"></div>
+            </div>
+            <div id="proc-result" class="hidden space-y-3 pt-2">
+                <p class="text-xs text-emerald-300 font-mono">Sequence Code: <span class="font-bold text-white">APEX-2026-889</span></p>
+                <button onclick="closeModal('modal-auto-process'); openModal('modal-qr')" class="w-full py-2.5 bg-brand-gold text-black rounded-xl font-bold text-xs uppercase" data-zh="立即開啟 WhatsApp 通訊對接" data-en="Open WhatsApp Portal Now">
+                    立即開啟 WhatsApp 通訊對接
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript 腳本 -->
+    <script>
+        let currentLang = 'zh';
+
+        const certData = [
+            { id: 1, title_zh: '01. 聯合國氣候變化進程參與者指南', title_en: '01. UN Climate Change Process Guide', org: 'UN Climate Change (UNFCCC)', cat: 'sports', desc_zh: '研習聯合國氣候變化框架公約 (UNFCCC) 大會運作機制與國際政策協商程序。', desc_en: 'Overview of UNFCCC negotiation mechanics, global climate policy, and multilateral processes.', value_zh: '對接優勢：掌握國際氣候政策話語權與框架。', value_en: 'Value: Strategic alignment with UNFCCC policy frameworks.' },
+            { id: 2, title_zh: '02. 遠距離跨境空氣污染公約研習', title_en: '02. Long-Range Transboundary Air Pollution', org: 'UNECE (聯合國歐洲經濟委員會)', cat: 'sports', desc_zh: '大氣污染物動態監測與跨境環境法規對接程序研習。', desc_en: 'Air pollution monitoring frameworks and transboundary regulatory alignment under LRTAP.', value_zh: '對接優勢：戶外極限賽事環境品質監測背書。', value_en: 'Value: Environmental quality monitoring for outdoor events.' },
+            { id: 3, title_zh: '03. 氣候行動中女性領導力專門研修', title_en: '03. Women Leadership in Climate Action', org: 'UNITAR / C40 / UN CC:Learn', cat: 'finance', desc_zh: '研習將 SDGs 與 DEI (多元平等共融) 融入綠色專案治理架構。', desc_en: 'Integrating SDGs and DEI leadership into climate project governance.', value_zh: '對接優勢：提升企業 ESG 評鑑中 S 與 G 指標得分。', value_en: 'Value: Enhances Corporate ESG scoring in Social & Governance.' },
+            { id: 4, title_zh: '04. 氣候倡議領航者培育專門研修', title_en: '04. Climate Champion Leadership', org: 'UNITAR / Youth4Capacity', cat: 'circular', desc_zh: '極限氣候專案管理與氣候變革領導力發展。', desc_en: 'Climate champion capacity building and transformational project leadership.', value_zh: '對接優勢：驅動組織綠色文化轉型。', value_en: 'Value: Driving organizational mindset transformation.' },
+            { id: 5, title_zh: '05. 跨境空氣污染效應動態監測', title_en: '05. Air Pollution Effects Monitoring', org: 'UNECE', cat: 'sports', desc_zh: '環境空氣品質數據動態監測與生態衝擊評估。', desc_en: 'Quantitative monitoring of air pollution impacts under LRTAP convention.', value_zh: '對接優勢：極限賽道微氣候環境風險防護。', value_en: 'Value: Microclimate environmental risk mitigation.' },
+            { id: 6, title_zh: '06. 淨零排放 101：原理與落地路徑', title_en: '06. Net Zero 101: Principles & Pathways', org: 'UNU-IAS (聯合國大學)', cat: 'finance', desc_zh: '溫室氣體盤查與 ISO 14064 淨零轉型路徑研習。', desc_en: 'Greenhouse gas accounting principles and science-based Net Zero transition pathways.', value_zh: '對接優勢：協助企業建構可查驗之淨零戰略。', value_en: 'Value: Verification-ready net-zero corporate strategy.' },
+            { id: 7, title_zh: '07. 《巴黎協定》國家自主落實與實踐', title_en: '07. Paris Agreement National Implementation', org: 'UN Climate Change (UNFCCC)', cat: 'finance', desc_zh: '研習國家自主貢獻 (NDC) 與《巴黎協定》第六條機制。', desc_en: 'National Determined Contributions (NDCs) and Paris Agreement Article 6 mechanisms.', value_zh: '對接優勢：對接跨國企業全氣鏈減碳條款。', value_en: 'Value: Alignment with MNC supply chain decarbonization.' },
+            { id: 8, title_zh: '08. SDGs 工具應用與共融領導力', title_en: '08. Inclusive Leadership & SDGs Tools', org: 'Global ESG Leadership Organization', cat: 'finance', desc_zh: '聯合國 SDGs 指標工具導入與商業專案管理。', desc_en: 'Deployment of UN SDGs measurement tools in corporate strategy.', value_zh: '對接優勢：高階 C-Suite 永續溝通背書。', value_en: 'Value: C-Suite level sustainability alignment.' },
+            { id: 9, title_zh: '09. 氣候變遷融入產業政策戰略', title_en: '09. Climate Integration in Policies', org: 'CILSS / AGRHYMET / UNITAR', cat: 'finance', desc_zh: '氣候韌性融入國家、地方與產業政策規劃。', desc_en: 'Integrating climate adaptation into national, local, and sector policies.', value_zh: '對接優勢：提供跨國 PPP 政府合作專案顧問。', value_en: 'Value: Strategic advisory for PPP government projects.' },
+            { id: 10, title_zh: '10. 氣候預算編制與融資成效評估', title_en: '10. Climate Finance & Budgetary Integration', org: 'CILSS / AGRHYMET / UN CC:Learn', cat: 'finance', desc_zh: '氣候預算科目標記 (Climate Budget Tagging) 與融資評估。', desc_en: 'Climate budget tagging and climate financing monitoring mechanisms.', value_zh: '對接優勢：確保綠色預算科目標記經得起審計。', value_en: 'Value: Audit-proof green budget tagging.' },
+            { id: 11, title_zh: '11. 可持續金融分類法專門研修', title_en: '11. Sustainable Finance Taxonomies', org: 'GIZ (德國國際合作機構) / SBFN', cat: 'finance', desc_zh: '深度研習歐盟與國際可持續金融分類法 (Sustainable Finance Taxonomies) 規範。', desc_en: 'In-depth study of EU and international Sustainable Finance Taxonomies and interoperability.', value_zh: '對接優勢：重構贊助合約，無縫對接歐盟 CSRD 金融審計。', value_en: 'Value: Contract restructuring aligned with EU CSRD audits.' },
+            { id: 12, title_zh: '12. 運動促進氣候行動進階全模組', title_en: '12. Sports for Climate Action E-Course', org: 'UNITAR / UNFCCC / UN CC:Learn', cat: 'sports', desc_zh: '參照聯合國框架，將氣候變遷融入賽事營運與商業模式。', desc_en: 'Comprehensive framework for integrating climate strategy into sports operations.', value_zh: '對接優勢：為國際萬人賽事提供聯合國框架指導。', value_en: 'Value: UN-aligned governance for mega-events.' },
+            { id: 13, title_zh: '13. 綠色體育五大模組評測合格', title_en: '13. Sports for Climate Action: 5 Modules', org: 'UNITAR / UNFCCC', cat: 'sports', desc_zh: '通過減碳、極端氣候調適與低碳供應鏈 5 大模組 (70% 門檻合格)。', desc_en: 'Passed 5 core modules (mitigation, supply chain, adaptation) with 70%+ score.', value_zh: '對接優勢：構建無瓶裝水與 rPET 採購防線。', value_en: 'Value: Verified low-carbon sports supply chain.' },
+            { id: 14, title_zh: '14. 運動與氣候行動基礎入門', title_en: '14. Introduction to Sports for Climate Action', org: 'UNITAR / UN CC:Learn', cat: 'sports', desc_zh: '體育賽事碳足跡與大眾氣候倡議宣導基礎研習。', desc_en: 'Foundational framework of carbon footprints and climate advocacy in sports.', value_zh: '對接優勢：新興賽事氣候合規認知導入。', value_en: 'Value: Baseline climate compliance for new events.' },
+            { id: 15, title_zh: '15. 塑膠廢棄物防制與循環經濟', title_en: '15. Combating Plastic Waste Traffic', org: 'UNITAR / Youth4Capacity', cat: 'circular', desc_zh: '研習塑膠廢棄物管制與閉環循環材料工程。', desc_en: 'Transboundary plastic waste controls and circular economy material flow.', value_zh: '對接優勢：導入 MFA 物質流分析與 TRUE 零廢棄認證。', value_en: 'Value: Deploys MFA data and TRUE Zero Waste certification.' }
+        ];
+
+        // 頁面切換邏輯
+        function navigateToPage(pageId) {
+            const pages = document.querySelectorAll('.page-view');
+            pages.forEach(p => p.classList.add('hidden'));
+
+            const targetPage = document.getElementById(pageId);
+            if (targetPage) {
+                targetPage.classList.remove('hidden');
+            }
+
+            document.querySelectorAll('.page-nav-btn').forEach(btn => {
+                btn.className = 'page-nav-btn px-2.5 py-1.5 rounded-lg text-gray-300 hover:text-white hover:bg-brand-card transition whitespace-nowrap';
+            });
+
+            const activeNav = document.getElementById(`nav-btn-${pageId}`);
+            if (activeNav) {
+                activeNav.className = 'page-nav-btn px-2.5 py-1.5 rounded-lg text-brand-gold bg-brand-green/50 border border-brand-gold/40 font-semibold transition whitespace-nowrap';
+            }
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // 語系切換
+        function setLanguage(lang) {
+            currentLang = lang;
+            const zhBtn = document.getElementById('lang-btn-zh');
+            const enBtn = document.getElementById('lang-btn-en');
+            if (zhBtn) zhBtn.className = lang === 'zh' ? 'px-2 py-0.5 rounded bg-brand-gold text-black font-bold transition' : 'px-2 py-0.5 rounded text-gray-400 hover:text-white transition';
+            if (enBtn) enBtn.className = lang === 'en' ? 'px-2 py-0.5 rounded bg-brand-gold text-black font-bold transition' : 'px-2 py-0.5 rounded text-gray-400 hover:text-white transition';
+
+            document.querySelectorAll('[data-zh]').forEach(el => {
+                const text = el.getAttribute(`data-${lang}`);
+                if (text) el.innerHTML = text;
+            });
+
+            renderCerts('all');
+            updateCalculator();
+        }
+
+        function openModal(id) {
+            const modal = document.getElementById(id);
+            if (modal) modal.classList.remove('hidden');
+        }
+
+        function closeModal(id) {
+            const modal = document.getElementById(id);
+            if (modal) modal.classList.add('hidden');
+        }
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            if (menu) menu.classList.toggle('hidden');
+        }
+
+        function renderCerts(filter = 'all') {
+            const grid = document.getElementById('cert-grid');
+            if (!grid) return;
+            grid.innerHTML = '';
+            const filtered = filter === 'all' ? certData : certData.filter(c => c.cat === filter);
+            
+            filtered.forEach(c => {
+                const card = document.createElement('div');
+                card.className = 'p-4 bg-black rounded-xl border border-brand-border text-xs flex flex-col justify-between hover:border-brand-gold/60 cursor-pointer transition gold-border-glow h-full min-h-[110px]';
+                card.onclick = () => openCertModal(c.id);
+                const title = currentLang === 'zh' ? c.title_zh : c.title_en;
+                card.innerHTML = `
+                    <div class="space-y-1.5">
+                        <div class="flex items-center justify-between">
+                            <span class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-brand-green/40 text-brand-gold border border-brand-gold/20">No.${String(c.id).padStart(2, '0')}</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-gray-400"></i>
+                        </div>
+                        <h5 class="font-bold text-white line-clamp-2 leading-snug text-xs sm:text-sm">${title}</h5>
+                    </div>
+                    <p class="text-[10px] text-brand-gold font-mono line-clamp-1 mt-2">${c.org}</p>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function filterCert(cat) {
+            document.querySelectorAll('.cert-filter-btn').forEach(b => {
+                b.className = 'cert-filter-btn px-2.5 py-1 rounded text-gray-300 hover:text-white whitespace-nowrap';
+            });
+            const btn = document.getElementById(`cert-btn-${cat}`);
+            if (btn) btn.className = 'cert-filter-btn px-2.5 py-1 rounded text-black bg-brand-gold font-bold whitespace-nowrap';
+            renderCerts(cat);
+        }
+
+        function openCertModal(id) {
+            const c = certData.find(item => item.id === id);
+            if (!c) return;
+            
+            const imgEl = document.getElementById('modal-cert-img');
+            if (imgEl) {
+                imgEl.style.display = 'block';
+                if (imgEl.nextElementSibling) imgEl.nextElementSibling.style.display = 'none';
+                imgEl.src = `cert-${c.id}.jpg`;
+            }
+
+            const tEl = document.getElementById('modal-cert-title');
+            const oEl = document.getElementById('modal-cert-org');
+            const dEl = document.getElementById('modal-cert-desc');
+            const vEl = document.getElementById('modal-cert-value');
+            if (tEl) tEl.innerText = currentLang === 'zh' ? c.title_zh : c.title_en;
+            if (oEl) oEl.innerText = c.org;
+            if (dEl) dEl.innerText = currentLang === 'zh' ? c.desc_zh : c.desc_en;
+            if (vEl) vEl.innerText = currentLang === 'zh' ? c.value_zh : c.value_en;
+            openModal('modal-cert');
+        }
+
+        function updateCalculator() {
+            const scaleEl = document.getElementById('slider-scale');
+            const riskEl = document.getElementById('slider-risk');
+            if(!scaleEl || !riskEl) return;
+
+            let scale = parseInt(scaleEl.value);
+            let risk = parseInt(riskEl.value);
+            
+            if (isNaN(scale) || scale < 5000) scale = 5000;
+            if (isNaN(risk) || risk < 10) risk = 10;
+
+            const vsEl = document.getElementById('val-scale');
+            const vrEl = document.getElementById('val-risk');
+            if (vsEl) vsEl.innerText = scale.toLocaleString() + (currentLang === 'zh' ? ' 人' : ' participants');
+            if (vrEl) vrEl.innerText = risk + '%';
+
+            const riskMoney = Math.round((scale * 45) * (risk / 100));
+            const rmEl = document.getElementById('out-risk-money');
+            if (rmEl) rmEl.innerText = '$' + riskMoney.toLocaleString();
+
+            let medicalLevel = '';
+            if (risk >= 70 || scale >= 80000) {
+                medicalLevel = currentLang === 'zh' ? 'Level 4 (極高 - 緊急協定)' : 'Level 4 (Critical)';
+            } else if (risk >= 35) {
+                medicalLevel = currentLang === 'zh' ? 'Level 3 (中高 - 醫療通道)' : 'Level 3 (High)';
+            } else {
+                medicalLevel = currentLang === 'zh' ? 'Level 1 (低度)' : 'Level 1 (Low)';
+            }
+            
+            const omEl = document.getElementById('out-medical');
+            if (omEl) {
+                omEl.innerText = medicalLevel;
+                omEl.className = "text-base sm:text-xl md:text-2xl font-serif font-bold text-amber-200 font-mono whitespace-nowrap overflow-hidden text-ellipsis";
+            }
+
+            const roiFactor = Math.min(((riskMoney / 150000)), 15.0).toFixed(1);
+            const orEl = document.getElementById('out-roi');
+            if (orEl) {
+                orEl.innerText = roiFactor + (currentLang === 'zh' ? 'x 避險係數' : 'x Factor');
+                orEl.className = "text-xl sm:text-3xl font-serif font-bold text-emerald-200 font-mono whitespace-nowrap";
+            }
+        }
+
+        function autoAskChatbot() {
+            const dropdown = document.getElementById('chatbot-dropdown');
+            if (!dropdown) return;
+            const val = dropdown.value;
+            if (!val) return;
+
+            const answers_zh = {
+                "1": "【四大綠色主軸】\n1. 綠色賽事：依 ISO 20121 / ISO 14067 執行 Scope 1-3 賽事碳盤查、WBGT 微氣候緊急醫療後送協定。\n2. 綠色展演：模組化拆解展場硬體、MFA 物質流數據分析、TRUE Zero Waste 零廢棄認證。\n3. 企業 CSRD：GIZ 金融分類法審計對接、SROI 社會價值重構。\n4. 智庫顧問：Tier 1 Solo-Advisory 隨插即用外包智庫。",
+                "2": "【創辦人徐鳴】\n創辦人徐鳴（官方登記名：HSU Fu-Ming）持有 15 項 UN/GIZ 官方認證，具備 20 多年亞洲與跨國大型賽事統籌經驗，媒體公關行銷造勢與危機防衛底蘊。",
+                "3": "【國家級研發專案】\n主導 10 項國家級 SBIR/SIIR 研發專案與 C-Suite 風控管理。",
+                "4": "【對接 SOP】\n1. 需求對談 ➔ 2. 資料商業去敏 ➔ 3. 專案簽核。"
+            };
+
+            const answers_en = {
+                "1": "【Four Pillars】\n1. Green Events: ISO 20121 / 14067 Scope 1-3 carbon accounting & WBGT protocols.\n2. Green Exhibitions: Modular demountable structures, MFA analysis & TRUE Zero Waste.\n3. Corporate CSRD: GIZ Taxonomies alignment, contract restructuring.\n4. Advisory: Tier 1 Solo-Advisory Plug-and-Play Hub.",
+                "2": "【Founder Vivian Hsu】\nHolds 15 UN/GIZ official credentials with 20+ years of mega-event logistics, PR marketing & crisis defense.",
+                "3": "【National R&D】\nManaged 10 national government SBIR/SIIR projects & C-Suite risk governance.",
+                "4": "【Advisory SOP】\n1. Consultation ➔ 2. Data De-identification ➔ 3. Executive Approval."
+            };
+
+            const box = document.getElementById('chat-messages');
+            if (!box) return;
+            const msg = currentLang === 'zh' ? answers_zh[val] : answers_en[val];
+            box.innerHTML += `<div class="p-2.5 rounded-lg bg-brand-green/30 border border-brand-green/50 text-gray-100 whitespace-pre-line">${msg}</div>`;
+            box.scrollTop = box.scrollHeight;
+        }
+
+        // Alex 頂級特助對話發送邏輯（全權真人化特助語氣）
+        function sendChatMessage() {
+            const input = document.getElementById('chat-input');
+            if (!input) return;
+            const txt = input.value.trim();
+            
+            if (!txt) {
+                input.focus();
+                return;
+            }
+
+            const box = document.getElementById('chat-messages');
+            if (!box) return;
+
+            box.innerHTML += `<div class="p-2 rounded-lg bg-black text-gray-100 text-right">${txt}</div>`;
+            
+            setTimeout(() => {
+                if (/^\d+$/.test(txt) || txt.length < 2) {
+                    const warning = currentLang === 'zh' 
+                        ? '⚠️ 您好，我是特助 Alex。請提供更具體的諮詢需求（如：賽事 Scope 1-3 碳盤查、CSRD 防漂綠），或直接利用上方下拉選單選擇主題，以利為您精準紀錄。' 
+                        : '⚠️ Hello, I am Alex. Please provide a detailed inquiry or select a topic from the dropdown menu.';
+                    box.innerHTML += `<div class="p-2.5 rounded-lg bg-red-950/40 border border-red-800/50 text-red-200">${warning}</div>`;
+                } else {
+                    const reply = currentLang === 'zh' 
+                        ? '收到您的訊息！我是特助 Alex，已為您將諮詢要點紀錄並轉呈徐鳴創辦人。請點擊右上角『WhatsApp 對接』按鈕，我們將優先為貴司安排高階對接評估。' 
+                        : 'Message received. I am Alex, Executive Assistant to Founder Vivian Hsu. Your inquiry has been logged. Please click WhatsApp button to connect with our team.';
+                    box.innerHTML += `<div class="p-2.5 rounded-lg bg-brand-green/30 border border-brand-green/50 text-gray-100">${reply}</div>`;
+                }
+                box.scrollTop = box.scrollHeight;
+            }, 500);
+
+            input.value = '';
+        }
+
+        function handleAutoFormSubmit(e) {
+            e.preventDefault();
+            const emailInput = document.getElementById('input-email');
+            const errorMsg = document.getElementById('email-error');
+            
+            const emailValue = emailInput.value.trim();
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            
+            if (!emailRegex.test(emailValue)) {
+                errorMsg.classList.remove('hidden');
+                emailInput.focus();
+                return;
+            }
+
+            errorMsg.classList.add('hidden');
+            openModal('modal-auto-process');
+            let p = 10;
+            const timer = setInterval(() => {
+                p += 30;
+                const bar = document.getElementById('proc-bar');
+                if (bar) bar.style.width = p + '%';
+                if (p >= 100) {
+                    clearInterval(timer);
+                    const res = document.getElementById('proc-result');
+                    if (res) res.classList.remove('hidden');
+                }
+            }, 300);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            renderCerts('all');
+            updateCalculator();
+        });
+    </script>
+</body>
+</html>
